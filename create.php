@@ -19,7 +19,7 @@ $pinghost="http://ping.baidu.com/ping/RPC2";
 $hosts=explode(",",$pinghost);
 function rpc_ping($webname,$weburl,$updateurl,$rss){
 	if(!function_exists('curl_init')){
-		return "Ping失败，未开启Curl扩展!";
+		return "推送失败，未开启Curl扩展!";
 	}
 	global $hosts;
 	$xml = <<<EOT

@@ -18,6 +18,9 @@ require_once(DEDEINC."/arc.archives.class.php");				  //生成HTML的库文件
 $pinghost="http://ping.baidu.com/ping/RPC2";
 $hosts=explode(",",$pinghost);
 function rpc_ping($webname,$weburl,$updateurl,$rss){
+	if(!function_exists('curl_init')){
+		return "Ping失败，未开启Curl扩展!";
+	}
 	global $hosts;
 	$xml = <<<EOT
 <?xml version="1.0"?>
